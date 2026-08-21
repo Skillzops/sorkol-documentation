@@ -14,7 +14,9 @@ const config = {
 
   trailingSlash: true,
 
-  basePath: '/sorkol-documentation',
+  // GitHub Pages serves the production site from the repository path, while
+  // local development should remain available at http://localhost:3000.
+  basePath: process.env.NODE_ENV === 'production' ? '/sorkol-documentation' : undefined,
 
   images: {
     unoptimized: true,
