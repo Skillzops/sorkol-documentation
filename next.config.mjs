@@ -1,6 +1,7 @@
 import { createMDX } from 'fumadocs-mdx/next';
 
 const withMDX = createMDX();
+const isGitHubPagesBuild = process.env.GITHUB_ACTIONS === 'true';
 
 /** @type {import('next').NextConfig} */
 const config = {
@@ -16,7 +17,7 @@ const config = {
 
   // GitHub Pages serves the production site from the repository path, while
   // local development should remain available at http://localhost:3000.
-  basePath: process.env.NODE_ENV === 'production' ? '/sorkol-documentation' : undefined,
+  basePath: isGitHubPagesBuild ? '/sorkol-documentation' : undefined,
 
   images: {
     unoptimized: true,
