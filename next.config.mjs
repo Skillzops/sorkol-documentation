@@ -20,6 +20,13 @@ const config = {
 
   images: {
     unoptimized: true,
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
+        pathname: '/djckxdqzw/image/upload/**',
+      },
+    ],
   },
 };
 

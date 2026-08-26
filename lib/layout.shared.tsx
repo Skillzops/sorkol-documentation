@@ -6,11 +6,11 @@ export function baseOptions(): BaseLayoutProps {
     nav: {
       title: (
         <Image
-          src="/images/sorkol-logo.png"
+          src="https://res.cloudinary.com/djckxdqzw/image/upload/v1787741068/favicon_bqqeay.png"
           alt="SORKOL"
-          width={170}
+          width={32}
           height={32}
-          className="h-8 w-auto"
+          className="h-8 w-8"
           priority
         />
       ),
