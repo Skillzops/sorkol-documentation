@@ -3,8 +3,6 @@ title: Connect Odyssey
 description: Connect your SORKOL tenant’s payment feed to Odyssey and configure historical imports.
 ---
 
-# Connect Odyssey
-
 Prepare the feed in SORKOL, then register it in Odyssey. Each feed and access token belongs to one tenant; use the credentials from the workspace whose payments you want to share.
 
 ## 1. Prepare your SORKOL feed
@@ -64,8 +62,8 @@ Check the saved integration in Odyssey and confirm that payments appear for the 
 
 In **Analytics → Data Integrations → API Data Integrations**, find your saved integration and open its **Actions** menu (the three dots).
 
-- **Run** starts a manual run of the integration.
-- **Rerun Historical Data** requests the historical import again. Check the configured historical dates and intended dataset before using it.
+- **Run** starts a manual run to test the integration. Check the outcome and confirm that the expected records appear in Odyssey.
+- **Rerun Historical Data** is optional. Use it only if you have historical data to import again; check the configured historical dates and intended dataset first.
 - **Edit** lets you review the integration settings, including its URL and API Key.
 
 ![Odyssey integration Actions menu showing Run and Rerun Historical Data, with identifying details obscured](/images/docs/integrations/odyssey-run.png)
