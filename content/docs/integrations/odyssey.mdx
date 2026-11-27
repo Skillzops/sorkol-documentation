@@ -19,6 +19,8 @@ Keep the Feed URL and token ready for Odyssey’s authentication fields. Use the
 
 ## 2. Create the integration in Odyssey
 
+For Odyssey’s own instructions, see [Odyssey’s Skillz Systems integration guide](https://help.odysseyenergysolutions.com/portal/en/kb/articles/skillz-systems).
+
 In Odyssey, open **Analytics → Data Integrations → API Data Integrations**, then choose **Create** (or **New Integration** on the empty screen).
 
 ![Odyssey API Data Integrations page with the Create action](/images/docs/integrations/odyssey-create.png)
@@ -52,11 +54,23 @@ The programme shown is an example, not a required selection for every tenant.
 
 ![Odyssey authentication fields and optional historical-data import](/images/docs/integrations/odyssey-authentication.png)
 
-Choose **Save** after completing the required fields. Odyssey’s own [Skillz Systems integration guide](https://help.odysseyenergysolutions.com/portal/en/kb/articles/skillz-systems) describes this registration flow. Its generic “API” source wording corresponds to the **Odyssey Standard API** label in the supplied screenshots.
+Choose **Save** after completing the required fields. The linked Odyssey guide uses generic “API” source wording; the supplied screenshots show this as **Odyssey Standard API**.
 
 ## 5. Validate and maintain the connection
 
 Check the saved integration in Odyssey and confirm that payments appear for the intended tenant and date range. A successful SORKOL test verifies feed access; it does not confirm that Odyssey has completed its import.
+
+### Run the saved integration
+
+In **Analytics → Data Integrations → API Data Integrations**, find your saved integration and open its **Actions** menu (the three dots).
+
+- **Run** starts a manual run of the integration.
+- **Rerun Historical Data** requests the historical import again. Check the configured historical dates and intended dataset before using it.
+- **Edit** lets you review the integration settings, including its URL and API Key.
+
+![Odyssey integration Actions menu showing Run and Rerun Historical Data, with identifying details obscured](/images/docs/integrations/odyssey-run.png)
+
+Choose the action on the correct integration row; the screenshot contains several example integrations. After requesting a run, check its outcome in Odyssey and confirm the expected records have arrived. These actions import data into Odyssey; they do not submit a claim on your behalf.
 
 If authentication fails, check that the URL and token came from the same SORKOL workspace and that the token is still active. If the import is empty, verify the destination, date range and available payment records before creating another integration.
 
