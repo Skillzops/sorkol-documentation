@@ -1,12 +1,80 @@
 ---
 title: Connect Odyssey
-description: Share a tenant-specific transaction feed with Odyssey securely.
+description: Connect your SORKOL tenant’s payment feed to Odyssey and configure historical imports.
 ---
 
 # Connect Odyssey
 
-Open **Tenant Integrations** and locate the Odyssey panel. Copy the tenant Feed URL, generate or confirm the active access token, then share both securely with the authorised Odyssey integration team. Use **Send test request** to validate the connection.
+Prepare the feed in SORKOL, then register it in Odyssey. Each feed and access token belongs to one tenant; use the credentials from the workspace whose payments you want to share.
 
-![Odyssey integration controls](/images/docs/integrations/odyssey.png)
+## 1. Prepare your SORKOL feed
 
-Rotate the token when credentials must be refreshed or are suspected to be exposed. Revoke it to stop authenticated access. SORKOL only displays limited token details after creation; each feed and token is isolated to its tenant.
+1. Open **Settings → Tenant Integrations** and find **Odyssey**.
+2. Copy the **Feed URL** and generate an access token if needed. Save the full token securely when it is displayed; subsequent visits show only a preview.
+3. Use **Send test request** to check that the feed accepts the token.
+
+![SORKOL Odyssey feed URL, access-token controls and connection test](/images/docs/integrations/odyssey.png)
+
+Keep the Feed URL and token ready for Odyssey’s authentication fields. Use the URL copied from your own workspace rather than the example shown in the screenshots.
+
+## 2. Create the integration in Odyssey
+
+In Odyssey, open **Analytics → Data Integrations → API Data Integrations**, then choose **Create** (or **New Integration** on the empty screen).
+
+![Odyssey API Data Integrations page with the Create action](/images/docs/integrations/odyssey-create.png)
+
+## 3. Configure the dataset and target
+
+Complete these fields in the integration form:
+
+| Field | Value |
+| --- | --- |
+| Dataset Name | A recognisable name for your organisation, site or programme. |
+| Data Provider | **Odyssey**. |
+| Data Source | **Odyssey Standard API**, as shown below. |
+| Dataset Type | **Electricity Payments**. |
+| Target Level | **Project** for mini-grids; **Program** for distributed assets such as solar home systems. |
+| Project / Program | Select the destination relevant to your integration. |
+
+![Odyssey dataset name, provider, API source, electricity payments type and programme target](/images/docs/integrations/odyssey-dataset.png)
+
+The programme shown is an example, not a required selection for every tenant.
+
+## 4. Add authentication and historical dates
+
+| Field | What to enter |
+| --- | --- |
+| URL | The tenant’s SORKOL **Feed URL**. Preserve its `siteId`; do not append `FROM`, `TO` or `offset`, which Odyssey manages. |
+| API Key | The full SORKOL access token. |
+| Automatic token renewal | Leave unchecked; update Odyssey manually after rotating the SORKOL token. |
+| Page Limit | Use the value agreed for your integration, if required. The screenshot’s placeholder is not a required value. |
+| Integrate Historical Data | Enable this if you need to backfill earlier payments, then choose the historical start and end dates. |
+
+![Odyssey authentication fields and optional historical-data import](/images/docs/integrations/odyssey-authentication.png)
+
+Choose **Save** after completing the required fields. Odyssey’s own [Skillz Systems integration guide](https://help.odysseyenergysolutions.com/portal/en/kb/articles/skillz-systems) describes this registration flow. Its generic “API” source wording corresponds to the **Odyssey Standard API** label in the supplied screenshots.
+
+## 5. Validate and maintain the connection
+
+Check the saved integration in Odyssey and confirm that payments appear for the intended tenant and date range. A successful SORKOL test verifies feed access; it does not confirm that Odyssey has completed its import.
+
+If authentication fails, check that the URL and token came from the same SORKOL workspace and that the token is still active. If the import is empty, verify the destination, date range and available payment records before creating another integration.
+
+Rotate the token when credentials need refreshing or may have been exposed. The previous token stops working immediately, so replace Odyssey’s API Key with the new token. Revoking it stops authenticated feed access; the Site ID stays the same.
+
+
+## Export a file for your Odyssey claim
+
+For a manual claim submission, SORKOL also provides an **Odyssey Export** on the **Reports** page. This generates the Odyssey connections workbook (`.xlsx`) for your tenant to upload on Odyssey as part of its claim.
+
+![SORKOL Reports page with the Odyssey Export button highlighted](/images/docs/integrations/odyssey-report-export.png)
+
+1. Open **Insights → Reports** in the correct tenant workspace.
+2. Choose **Odyssey Export**, rather than the ordinary **Download** button.
+3. Select the start and end dates for the connections you want to submit. These are **sale dates**, with both dates included; they are separate from the payment-history dates used by the API integration.
+4. Generate the export and download the workbook. Larger exports may run in the background; check **Report Exports** for progress and the download when ready.
+5. Review the workbook, then upload it in the relevant Odyssey programme’s claim-submission workflow, following that programme’s requirements.
+
+Use this dedicated export to obtain the Odyssey-formatted file instead of rebuilding the claim workbook from a general report. Generating or downloading it in SORKOL does **not** submit the claim: your team must upload it and complete the submission on Odyssey.
+
+The API integration described above shares payment data automatically. The workbook supports the separate manual file-upload step for claims.
