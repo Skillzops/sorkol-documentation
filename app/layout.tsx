@@ -8,7 +8,14 @@ const inter = Inter({
   subsets: ['latin'],
 });
 
+const assetPrefix = process.env.GITHUB_ACTIONS === 'true' ? '/sorkol-documentation' : '';
+
 export const metadata: Metadata = {
+  icons: {
+    icon: [{ url: `${assetPrefix}/favicon.png`, type: 'image/png' }],
+    shortcut: `${assetPrefix}/favicon.png`,
+    apple: `${assetPrefix}/apple-touch-icon.png`,
+  },
   metadataBase: new URL('https://skillzops.github.io/sorkol-documentation'),
 };
 
