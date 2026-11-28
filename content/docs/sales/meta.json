@@ -1,1 +1,9 @@
-{"title":"Sales","pages":["index","one-time-sales","paygo-sales","quotes"]}
+{
+  "title": "Sales",
+  "pages": [
+    "index",
+    "quotes",
+    "one-time-sales",
+    "paygo-sales"
+  ]
+}

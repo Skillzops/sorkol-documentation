@@ -1,3 +1,17 @@
 {
-  "pages": ["index", "onboarding-flow", "get-started", "sales", "configuration", "users-and-access", "finance", "paygo", "inventory", "integrations", "security", "hosting-and-support", "reference"]
+  "pages": [
+    "index",
+    "get-started",
+    "onboarding-flow",
+    "sales",
+    "inventory",
+    "finance",
+    "paygo",
+    "configuration",
+    "users-and-access",
+    "integrations",
+    "security",
+    "hosting-and-support",
+    "reference"
+  ]
 }

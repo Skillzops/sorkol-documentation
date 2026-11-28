@@ -1,1 +1,10 @@
-{"title":"Finance & payments","pages":["index","payments","invoices","receipts","reconciliation"]}
+{
+  "title": "Finance & payments",
+  "pages": [
+    "index",
+    "invoices",
+    "payments",
+    "receipts",
+    "reconciliation"
+  ]
+}

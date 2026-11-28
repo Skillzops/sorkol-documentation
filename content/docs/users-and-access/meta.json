@@ -1,1 +1,10 @@
-{"title":"Users & access","pages":["index","users","roles","permissions","separation-of-duties"]}
+{
+  "title": "Users & access",
+  "pages": [
+    "index",
+    "roles",
+    "permissions",
+    "users",
+    "separation-of-duties"
+  ]
+}

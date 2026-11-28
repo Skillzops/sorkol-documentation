@@ -1,1 +1,9 @@
-{"title":"Inventory","pages":["index","products","warehouses","stock-management"]}
+{
+  "title": "Inventory",
+  "pages": [
+    "index",
+    "products",
+    "warehouses",
+    "stock-management"
+  ]
+}

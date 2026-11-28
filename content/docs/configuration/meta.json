@@ -1,1 +1,14 @@
-{"title":"Configuration","pages":["index","payment-gateways","oem-integrations","price-books","invoicing","inventory","commissions","automation","branding"]}
+{
+  "title": "Configuration",
+  "pages": [
+    "index",
+    "branding",
+    "price-books",
+    "invoicing",
+    "payment-gateways",
+    "inventory",
+    "commissions",
+    "oem-integrations",
+    "automation"
+  ]
+}
